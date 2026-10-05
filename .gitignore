@@ -1,0 +1,28 @@
+# Virtual environment
+.venv/
+venv/
+
+# Secrets - NEVER commit
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Vector database (rebuilt by running ingest.py)
+data/chroma/
+chroma_db/
+
+# Generated data (keep the folder via .gitkeep)
+data/processed/*
+!data/processed/.gitkeep
+
+# Local source documents (not committed until cleared for sharing)
+data/raw/*
+!data/raw/.gitkeep
+
+# OS / notebooks
+.DS_Store
+Thumbs.db
+.ipynb_checkpoints/
