@@ -1,0 +1,42 @@
+from src.config import EMBEDDING_MODEL_NAME
+from src.retriever import Retriever
+from src.generator import Generator
+
+
+def main():
+    question = "What evidence should students collect for their portfolio?"
+    print("Initialising retriever...")
+    retriever = Retriever(EMBEDDING_MODEL_NAME)
+
+    print("Retrieving relevant documents...")
+    results = retriever.retrieve(question, top_k=3)
+
+    print("Initialising generator...")
+    generator = Generator()
+
+    print("Generating answer...")
+    answer = generator.generate(question, results)
+
+    print("\n" + "=" * 60)
+    print("QUESTION")
+    print("=" * 60)
+    print(question)
+
+    print("\n" + "=" * 60)
+    print("GENERATED ANSWER")
+    print("=" * 60)
+    print(answer)
+
+    print("\n" + "=" * 60)
+    print("RETRIEVED SOURCES")
+    print("=" * 60)
+
+    for metadata in results["metadatas"][0]:
+        print(
+            f"- {metadata.get('source')} "
+            f"(chunk {metadata.get('chunk_id')})"
+        )
+
+
+if __name__ == "__main__":
+    main()
