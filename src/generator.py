@@ -48,15 +48,20 @@ class Generator:
         prompt = f"""
 You are a university knowledge assistant.
 
-Answer the user's question using ONLY the retrieved context below.
+Your task is to answer the user's question using ONLY the retrieved
+context provided below.
 
-Rules:
-1. Do not invent information.
-2. If the context does not contain enough information, say that
-   the information is not available in the retrieved documents.
-3. Give a concise and clear answer.
-4. Include the relevant source names in your answer.
-5. Do not use outside knowledge to answer the question.
+Grounding requirements:
+
+1. Use only information explicitly supported by the retrieved context.
+2. Do not use outside knowledge.
+3. Do not invent facts, dates, statistics, policies, or requirements.
+4. If the retrieved context does not provide enough information to answer
+   the question, clearly state that the information is not available in
+   the retrieved documents.
+5. Keep the answer concise and directly relevant to the question.
+6. Do not claim that information comes from a source unless that source
+   appears in the retrieved context.
 
 Retrieved context:
 

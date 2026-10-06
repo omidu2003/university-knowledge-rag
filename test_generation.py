@@ -5,6 +5,7 @@ from src.generator import Generator
 
 def main():
     question = "What evidence should students collect for their portfolio?"
+
     print("Initialising retriever...")
     retriever = Retriever(EMBEDDING_MODEL_NAME)
 
@@ -31,11 +32,17 @@ def main():
     print("RETRIEVED SOURCES")
     print("=" * 60)
 
+    seen_sources = set()
+
     for metadata in results["metadatas"][0]:
-        print(
-            f"- {metadata.get('source')} "
-            f"(chunk {metadata.get('chunk_id')})"
-        )
+        source = metadata.get("source", "Unknown source")
+        chunk_id = metadata.get("chunk_id", "Unknown")
+
+        if source not in seen_sources:
+            print(f"- {source}")
+            seen_sources.add(source)
+
+        print(f"  Chunk: {chunk_id}")
 
 
 if __name__ == "__main__":

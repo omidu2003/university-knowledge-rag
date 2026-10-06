@@ -1,0 +1,42 @@
+[
+    {
+        "id": "q01",
+        "question": "What evidence should students collect for their portfolio?",
+        "expected_sources": [
+            "assessment_guidance.txt"
+        ]
+    },
+    {
+        "id": "q02",
+        "question": "What should technical project documentation explain?",
+        "expected_sources": [
+            "assessment_guidance.txt"
+        ]
+    },
+    {
+        "id": "q03",
+        "question": "What should students maintain throughout the academic year?",
+        "expected_sources": [
+            "module_information.txt"
+        ]
+    },
+    {
+        "id": "q04",
+        "question": "How should students demonstrate increasing technical competence?",
+        "expected_sources": [
+            "module_information.txt"
+        ]
+    },
+    {
+        "id": "q05",
+        "question": "What information is provided about portfolio reflections?",
+        "expected_sources": [
+            "module_information.txt"
+        ]
+    },
+    {
+        "id": "q06",
+        "question": "What is the current population of Mars?",
+        "expected_sources": []
+    }
+]
