@@ -52,8 +52,9 @@ Further development will focus on validating the complete retrieval and generati
 
 - Python 3.12
 - VS Code
-- Sentence Transformers
+- Sentence Transformers (all-MiniLM-L6-v2)
 - ChromaDB
+- Groq API (OpenAI-compatible LLM endpoint)
 - Streamlit
 - PyPDF
 - python-dotenv
@@ -91,3 +92,20 @@ university-knowledge-rag/
 ├── .env.example
 ├── requirements.txt
 └── README.md
+
+## Getting Started
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate        # Windows  (macOS/Linux: source .venv/bin/activate)
+pip install -r requirements.txt
+cp .env.example .env            # then add your Groq API key
+# put .txt / .pdf documents in data/raw/
+python ingest.py                # build the Chroma vector database
+streamlit run app/streamlit_app.py
+```
+
+## Author
+
+**Omidu Dulen Jayasinghe** — BSc Applied Artificial Intelligence, University of Bradford
+[GitHub](https://github.com/omidu2003) · [LinkedIn](https://www.linkedin.com/in/omidu-jayasinghe-88589a32b/)
